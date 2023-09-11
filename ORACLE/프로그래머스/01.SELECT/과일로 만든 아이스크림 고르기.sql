@@ -1,0 +1,25 @@
+SELECT a.flavor
+FROM FIRST_HALF a
+    ,ICECREAM_INFO b
+WHERE a.flavor = b.flavor
+  AND a.total_order > 3000
+  AND b.ingredient_type = 'fruit_based'
+ORDER BY a.total_order DESC;
+
+
+--
+
+SELECT
+    FIRST_HALF.FLAVOR
+FROM
+    FIRST_HALF
+INNER JOIN
+    ICECREAM_INFO
+ON
+    FIRST_HALF.FLAVOR = ICECREAM_INFO.FLAVOR
+WHERE
+    FIRST_HALF.TOTAL_ORDER > 3000
+AND
+    ICECREAM_INFO.INGREDIENT_TYPE = 'fruit_based'
+ORDER BY
+    FIRST_HALF.TOTAL_ORDER DESC
